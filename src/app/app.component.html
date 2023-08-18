@@ -1,0 +1,21 @@
+<div>Segment count: {{segmentCount}}</div>
+<div>{{difference}} of the {{segmentCount}} segments were removed. Saving {{percentage}} %</div>
+
+<canvas #canvas
+  (mousedown)="onMouseDown($event)"
+  (mousemove)="onMouseDrag($event)"
+  (mouseup)="onMouseUp($event)"
+  (mouseleave)="onMouseLeave($event)"
+>
+</canvas>
+
+<canvas #canvas2 width="200" height="200"
+  (mousedown)="canvasMouseDown($event)"
+  (mousemove)="canvasMouseMove($event)"
+  (mouseup)="canvasMouseUp($event)"
+  (mouseout)="mousePressed=false">
+</canvas>
+
+<button (click)="redraw()">Redraw</button>
+<button (click)="clear()">Clear</button>
+<button (click)="onSimplify()">Simplify</button>
